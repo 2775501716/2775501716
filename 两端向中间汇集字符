@@ -1,0 +1,28 @@
+//演示从两端向中间汇集的字符
+//welcome to bit!!!
+//#################
+int main()
+{
+	char arr1[] = "welcome to world !!!!";
+	char arr2[] = "#####################";
+	int left = 0;
+	int right = strlen(arr1) - 1;
+	for (left = 0, right = strlen(arr1) - 1; left <= right; left++, right--)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		
+		printf("%s\n", arr2);
+		//想要每次赋值后都停留一秒
+		Sleep(1000);//Sleep意思为休息，需要引头文件#include<stdio.h>
+		//倘若我想每次打印后清空屏幕再打印
+		system("cls");//是执行系统命令的函数 - cls意为清空屏幕
+		
+	}
+    if (left == right)
+    {
+	printf("%s\n", arr2);
+	
+	return 0;
+	}
+}

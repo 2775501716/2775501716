@@ -1,0 +1,58 @@
+//C语言实现strncpy
+char* my_strncpy(char* dest, const char* src,int num)
+{
+	assert(dest != NULL && src != NULL && num >= 0);
+	/*assert*/
+	int count = 1;
+	char* ret = dest;
+	const char* src1 = src;
+	char* sun = src;
+	while (*src1 != '\0')
+	{
+		count++;
+		src1++;
+	}
+	if (num > count)
+	{
+		while (*dest++ = *src++)
+		{
+			if (*src == '\0')
+			{
+				while (*dest++ = '\0'&&num--)
+				{
+					;
+				}
+				return ret;
+			}
+		}
+	}
+	else if (num < count)
+	{
+		while (*dest++ = *src++ && num--);
+		return ret;
+	}
+	else
+	{
+		while (*dest++ = *src++);
+		return ret;
+	}
+}
+int main()
+{
+	//模拟实现strncpy---拷贝字符串，语法形式为：strncpy(目的地，源头，要拷贝的字符个数 )
+	char arr1[20] = "abcdefewasdssssss";
+	char arr2[] = "adcve";
+	int input = 0;
+	scanf_s("%d", &input);
+	if (input <= 20)
+	{
+  //传递要拷贝的两个字符串的地址，以及要拷贝的个数
+		char* ret = my_strncpy(arr1, arr2, input);
+		printf("%s\n", ret);
+	}
+	else
+	{
+		printf("输入拷贝个数大于目的地空间，错误！\n");
+	}
+	return 0;
+}

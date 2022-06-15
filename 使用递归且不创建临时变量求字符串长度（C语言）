@@ -1,0 +1,18 @@
+int my_strlen(char* pa)
+{
+	if (*pa != '\0')
+	{
+		return 1+my_strlen(++pa);
+	}
+	else
+	{
+		return 0;
+	}
+}
+int main()
+{
+	//用递归并且不创建临时变量来求字符串长度
+	char arr[] = "abcdefese";
+	printf("%d\n",my_strlen(arr));
+	return 0;
+}

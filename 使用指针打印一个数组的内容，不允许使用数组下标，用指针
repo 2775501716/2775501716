@@ -1,0 +1,18 @@
+//使用指针打印一个数组的内容，不允许使用数组下标，用指针
+void print(int arr[],int sz)
+{
+	int* p = arr;
+	int a = 0;
+	for (a = 0; a < sz;a++)
+	{
+		printf("%d ", *(p + a));
+	}
+}
+int main()
+{
+	int arr[] = { 1,2,3,4,5};
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	//int* p = arr;//arr是数组第一个地址
+	print(arr,sz);
+	return 0;
+}
